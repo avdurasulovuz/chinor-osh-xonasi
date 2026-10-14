@@ -1,0 +1,439 @@
+<!doctype html>
+<html lang="uz">
+  <head>
+    <!-- 1. Sahifa sozlamalari va qidiruv tizimi uchun ma'lumotlar -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Chinor — Toshkentdagi o'zbek milliy taomlari va mehmondo'stligi bilan tanilgan oilaviy choyxona."
+    />
+    <meta name="theme-color" content="#1d3a3a" />
+    <title>Chinor — O'zbek milliy taomlari</title>
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+
+    <!-- 2. Sayt shriftlari va alohida CSS fayli -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+
+    <!-- 3. Alohida JavaScript fayli -->
+    <script src="./js/script.js" defer></script>
+  </head>
+
+  <body>
+    <!-- 4. Yuqori menyu va sayt bo'limlariga havolalar -->
+    <header class="site-header">
+      <div class="header-inner page-width">
+        <a class="brand" href="#home" aria-label="Chinor bosh sahifasi">
+          <span class="brand-name">Chinor</span>
+        </a>
+
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-label="Menyuni ochish"
+          aria-expanded="false"
+          aria-controls="main-navigation"
+        >
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav class="main-navigation" id="main-navigation" aria-label="Asosiy menyu">
+          <a href="#about">Biz haqimizda</a>
+          <a href="#menu">Taomnoma</a>
+          <a href="#gallery">Galereya</a>
+          <a href="#events">Tadbirlar</a>
+          <a href="#location">Manzil</a>
+          <a class="nav-booking" href="#reservation">Stol band qilish</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- 5. Bosh sahifadagi katta tanishtiruv rasmi va asosiy tugmalar -->
+      <section class="hero" id="home">
+        <img
+          class="hero-image"
+          src="./images/hero.webp"
+          alt="Chinor choyxonasidagi milliy dasturxon"
+          fetchpriority="high"
+        />
+        <div class="hero-shade"></div>
+        <div class="hero-content page-width">
+          <p class="eyebrow hero-eyebrow">Samarqandning yuragida</p>
+          <h1>Asl O'zbek<br /><em>Mehmondo'stligi</em></h1>
+          <p class="hero-description">
+            Qadimiy chinor daraxti soyasida joylashgan oilaviy
+            choyxonamizda haqiqiy an'anaviy ta'mlardan bahramand bo'ling.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#menu">Taomnoma bilan tanishish</a>
+            <a class="button button-outline" href="#reservation">Stol band qilish</a>
+          </div>
+        </div>
+        <a class="hero-scroll" href="#about" aria-label="Pastga o'tish">
+          <span class="hero-scroll-label">Pastga</span>
+          <span class="hero-scroll-line" aria-hidden="true"></span>
+        </a>
+      </section>
+
+      <!-- 6. Restoran haqida qisqacha ma'lumot va asosiy raqamlar -->
+      <section class="story section-pad" id="about">
+        <div class="story-grid page-width">
+          <div class="story-copy">
+            <h2>An'analar va<br /><em>mehr ila</em> tayyorlangan</h2>
+            <span class="story-divider" aria-hidden="true"></span>
+            <p>
+              "Chinor" — bu shunchaki restoran emas, bu uzoq yillik tarixga ega
+              bo'lgan mehmondo'stlik maskani. Bizning maqsadimiz har bir
+              mehmonga o'z uyidagidek qulaylik va iliqlikni ulashish.
+            </p>
+            <p>
+              Olovda pishgan shashlikning xushbo'y hidi, tandirdan endigina
+              uzilgan issiq somsa va qadimiy retsept asosida tayyorlanadigan
+              milliy taomlarimiz sizni befarq qoldirmaydi. Dasturxonimizga
+              marhamat!
+            </p>
+            <div class="stats-row" aria-label="Chinor haqida">
+              <div class="stat"><strong>25+</strong><span>Yillik tajriba</span></div>
+              <div class="stat"><strong>90+</strong><span>Taom turlari</span></div>
+              <div class="stat"><strong>120</strong><span>O'rinli zal</span></div>
+              <div class="stat"><strong>10K+</strong><span>Mamnun mehmonlar</span></div>
+            </div>
+          </div>
+
+          <div class="story-collage" aria-label="Choyxona va taomlar suratlari">
+            <div class="story-photo story-photo-tall">
+              <img src="./images/atmosphere.webp" alt="Choyxona ichi" loading="lazy" />
+            </div>
+            <div class="story-photo-stack">
+              <div class="story-photo"><img src="./images/somsa.webp" alt="Issiq somsa" loading="lazy" /></div>
+              <div class="story-photo"><img src="./images/tandoor.webp" alt="Tandirda pishayotgan non" loading="lazy" /></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7. Choyxonaning afzalliklari -->
+      <section class="features section-pad">
+        <div class="page-width">
+          <div class="section-heading section-heading-center">
+            <p class="eyebrow">Nima uchun Chinor?</p>
+            <h2>Bizning <em>qadriyatlarimiz</em></h2>
+          </div>
+          <div class="feature-grid">
+            <article class="feature">
+              <span class="feature-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M17 21a1 1 0 0 0 1-1v-5.3c0-.5.3-.9.7-1a4 4 0 0 0-2.1-7.6 5 5 0 0 0-9.2 0 4 4 0 0 0-2.1 7.6c.4.2.7.6.7 1V20a1 1 0 0 0 1 1z"/><path d="M6 17h12"/></svg>
+              </span>
+              <h3>An'anaviy retseptlar</h3>
+              <p>Buvilarimizdan o'tgan asl o'zbek retseptlari, hech qanday qisqartirishsiz.</p>
+            </article>
+            <article class="feature">
+              <span class="feature-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M12 3q1 4 4 6.5t3 5.5a7 7 0 0 1-14 0 5 5 0 0 1 1-3 1 1 0 0 0 5 0c0-2-1.5-3-1.5-5q0-2 2.5-4"/></svg>
+              </span>
+              <h3>Tandir taomlari</h3>
+              <p>Har kuni ertalab yoqiladigan tandirimizda non, somsa va kabob pishiriladi.</p>
+            </article>
+            <article class="feature">
+              <span class="feature-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M16 3.1a4 4 0 0 1 0 7.8M22 21v-2a4 4 0 0 0-3-3.9"/></svg>
+              </span>
+              <h3>Oilaviy zal</h3>
+              <p>Suzanali bezatilgan keng so'rilar — to'y, yubiley va oilaviy yig'inlar uchun.</p>
+            </article>
+            <article class="feature">
+              <span class="feature-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2M15 18H9M19 18h2a1 1 0 0 0 1-1v-3.6a1 1 0 0 0-.2-.6l-3.5-4.4a1 1 0 0 0-.8-.4H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg>
+              </span>
+              <h3>Yetkazib berish</h3>
+              <p>Toshkent bo'ylab issiqligicha yetkazib berish — 60 daqiqa ichida.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- 8. Taomnoma: toifalar va taom kartalari JavaScript orqali ko'rsatiladi -->
+      <section class="menu-section section-pad" id="menu">
+        <div class="page-width">
+          <div class="section-heading section-heading-center">
+            <h2>Bizning <em>Taomnoma</em></h2>
+            <p class="section-intro">
+              Har bir taom o'ziga xos mehr va e'tibor bilan tayyorlanadi.
+            </p>
+          </div>
+
+          <div class="menu-tabs" id="menu-tabs" aria-label="Taom toifalari"></div>
+          <p class="menu-tagline" id="menu-tagline" aria-live="polite"></p>
+          <div class="dish-grid" id="dish-grid" aria-live="polite"></div>
+          <p class="menu-footnote">Narxlar so'mda ko'rsatilgan. Mavjudlik va narxlar o'zgarishi mumkin.</p>
+        </div>
+      </section>
+
+      <!-- 9. Taomlar va choyxona muhitidan suratlar -->
+      <section class="gallery-section section-pad" id="gallery">
+        <div class="page-width">
+          <div class="section-heading gallery-heading section-heading-center">
+            <h2>Bizning <em>Fotogalereya</em></h2>
+            <p class="section-intro">Choyxonamiz ichidan, qozonimiz oldidan, dasturxonimiz ustidan</p>
+            <span class="section-divider" aria-hidden="true"></span>
+          </div>
+          <div class="gallery-grid">
+            <figure class="gallery-item"><img src="./images/tandoor.webp" alt="Tandirda pishayotgan non" loading="lazy" /><span class="gallery-overlay"></span></figure>
+            <figure class="gallery-item"><img src="./images/palov.webp" alt="O'zbek palovi" loading="lazy" /><span class="gallery-overlay"></span></figure>
+            <figure class="gallery-item"><img src="./images/dimlama.webp" alt="Qozonda dimlangan taom" loading="lazy" /><span class="gallery-overlay"></span></figure>
+            <figure class="gallery-item"><img src="./images/shashlik.webp" alt="Cho'g'da pishgan shashlik" loading="lazy" /><span class="gallery-overlay"></span></figure>
+            <figure class="gallery-item"><img src="./images/manti.webp" alt="Bug'da pishgan manti" loading="lazy" /><span class="gallery-overlay"></span></figure>
+            <figure class="gallery-item"><img src="./images/baliq.webp" alt="Milliy usulda pishirilgan baliq" loading="lazy" /><span class="gallery-overlay"></span></figure>
+            <figure class="gallery-item"><img src="./images/details.webp" alt="Choyxona bezaklaridagi milliy naqshlar" loading="lazy" /><span class="gallery-overlay"></span></figure>
+            <figure class="gallery-item"><img src="./images/qutob.webp" alt="An'anaviy qutob" loading="lazy" /><span class="gallery-overlay"></span></figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- 10. Haftalik tadbirlar va oilaviy marosimlar -->
+      <section class="events-section section-pad" id="events">
+        <div class="event-grid page-width">
+          <div class="event-intro">
+            <p class="eyebrow">Tadbirlar va kechalar</p>
+            <h2>Choyxona<br /><em>an'analari</em></h2>
+            <p>Har hafta — yangi taom, yangi ovoz, yangi xotira. Bizning tadbirlarimizda o'zbek madaniyatining jonli nafasini his etasiz.</p>
+          </div>
+          <div class="event-list">
+            <article class="event-card">
+              <span class="event-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></span>
+              <div>
+                <h3>Juma palovi</h3>
+                <p class="event-date">Har juma, 12:00 — 15:00</p>
+                <p>Maxsus tayyorlangan to'y oshi, jonli ashulalar bilan.</p>
+              </div>
+            </article>
+            <article class="event-card">
+              <span class="event-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></span>
+              <div>
+                <h3>Choyxona kechalari</h3>
+                <p class="event-date">Har shanba, 19:00</p>
+                <p>Dutor va do'mbira sadolari ostida shom dasturxoni.</p>
+              </div>
+            </article>
+            <article class="event-card">
+              <span class="event-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></span>
+              <div>
+                <h3>To'y va marosimlar</h3>
+                <p class="event-date">Buyurtma asosida</p>
+                <p>120 kishiga mo'ljallangan zal, milliy bezak va xizmat.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- 11. Mehmonlar fikri -->
+      <section class="testimonials-section section-pad">
+        <div class="page-width">
+          <div class="section-heading section-heading-center">
+            <h2>Mijozlarimiz <em>Fikri</em></h2>
+            <span class="section-divider" aria-hidden="true"></span>
+          </div>
+          <div class="testimonial-grid">
+            <blockquote class="quote-card">
+              <div class="review-stars" aria-label="5 yulduz">★★★★★</div>
+              <p>"Samarqandagi eng mazali palov shu yerda tayyorlanadi. Oilamiz bilan har yakshanba kelamiz. Xizmat ko'rsatish ham a'lo darajada."</p>
+              <footer><strong>Akmal R.</strong><span>Doimiy mijoz</span></footer>
+            </blockquote>
+            <blockquote class="quote-card">
+              <div class="review-stars" aria-label="5 yulduz">★★★★★</div>
+              <p>"Chinor ostidagi salqin havo, issiq choy va manti... Xuddi bolaligimdagi buvimning hovlisidagidek his qildim o'zimni. Judayam shinam joy."</p>
+              <footer><strong>Nilufar S.</strong><span>Mehmon</span></footer>
+            </blockquote>
+            <blockquote class="quote-card">
+              <div class="review-stars" aria-label="5 yulduz">★★★★★</div>
+              <p>"Xorijlik hamkorlarimizni shu yerga olib keldik. Milliy taomlarimiz ularga juda manzur bo'ldi. Ayniqsa tandir somsa hammaga yoqdi."</p>
+              <footer><strong>Doston E.</strong><span>Tadbirkor</span></footer>
+            </blockquote>
+          </div>
+        </div>
+      </section>
+
+      <!-- 12. Stol band qilish formasi: yuborilganda email yozish oynasi ochiladi -->
+      <section class="reservation-section section-pad" id="reservation">
+        <div class="reservation-panel page-width">
+          <div class="reservation-heading">
+            <h2>Stol <em>Band Qilish</em></h2>
+            <p>Oila a'zolaringiz va do'stlaringiz bilan go'zal oqshomni o'tkazish uchun joy band qiling</p>
+          </div>
+          <form class="reservation-form" id="reservation-form">
+            <div class="form-row">
+              <label>
+                <span>Ism-sharifingiz</span>
+                <input name="name" type="text" placeholder="Alisher Vohidov" autocomplete="name" minlength="2" required />
+              </label>
+              <label>
+                <span>Telefon raqam</span>
+                <input name="phone" type="tel" placeholder="+998 90 123 45 67" autocomplete="tel" required />
+              </label>
+            </div>
+            <div class="reservation-details-row">
+              <label>
+                <span>Mehmonlar soni</span>
+                <select name="guests" required>
+                  <option value="">Tanlang</option>
+                  <option value="2 kishi">2 kishi</option>
+                  <option value="4 kishi">4 kishi</option>
+                  <option value="6 kishi">6 kishi</option>
+                  <option value="8 kishi">8 kishi</option>
+                  <option value="10+ kishi">10+ kishi</option>
+                </select>
+              </label>
+              <div class="date-time-fields">
+                <label>
+                  <span>Sana</span>
+                  <input name="date" type="date" required />
+                </label>
+                <label>
+                  <span>Vaqt</span>
+                  <input name="time" type="time" required />
+                </label>
+              </div>
+            </div>
+            <label>
+              <span>Qo'shimcha istaklar <small>(ixtiyoriy)</small></span>
+              <textarea name="message" rows="3" placeholder="Masalan: Deraza oldidan joy yoki bolalar stulchasi kerak..."></textarea>
+            </label>
+            <button class="button button-secondary form-submit" type="submit">Buyurtma berish</button>
+            <p class="form-note" id="form-note" aria-live="polite">
+              Yuborish tugmasi email dasturida tayyor xat ochadi. Stol band qilingani telefon orqali tasdiqlanadi.
+            </p>
+          </form>
+        </div>
+      </section>
+
+      <!-- 13. Manzil, telefon, ish vaqti va xarita -->
+      <section class="location-section section-pad" id="location">
+        <div class="page-width">
+          <div class="section-heading section-heading-center location-heading">
+            <h2>Bizni <em>toping</em></h2>
+            <p>Samarqand yuragida, qulay va serqatnov joyda</p>
+          </div>
+          <div class="location-grid">
+            <div class="contact-card">
+              <div class="contact-item">
+                <span class="contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></span>
+                <div><span class="contact-label">Manzil</span><p>AL Buxoriy ko'chasi, 42-uy, Samarqand</p><p class="contact-subtext">Payariq tumani</p></div>
+              </div>
+              <div class="contact-item">
+                <span class="contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2A19.8 19.8 0 0 1 3.1 5.2 2 2 0 0 1 5.1 3h3a2 2 0 0 1 2 1.7l.5 2.7a2 2 0 0 1-.6 1.7L8.1 11a16 16 0 0 0 4.9 4.9l1.9-1.9a2 2 0 0 1 1.7-.6l2.7.5a2 2 0 0 1 1.7 2Z"/></svg></span>
+                <div><span class="contact-label">Telefon</span><a href="tel:+998712004242">+998 95 469 00 39</a><a class="contact-subtext" href="tel:+998954690039">+998 95 469 00 39</a></div>
+              </div>
+              <div class="contact-item">
+                <span class="contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/></svg></span>
+                <div><span class="contact-label">Elektron pochta</span><a href="mailto:info@chinor.uz">info@chinor.uz</a></div>
+              </div>
+              <div class="contact-item contact-hours">
+                <span class="contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></span>
+                <div class="contact-hours-content">
+                  <span class="contact-label">Ish vaqti</span>
+                  <ul class="hours-list">
+                    <li><span>Dushanba — Payshanba</span><strong>10:00 — 23:00</strong></li>
+                    <li><span>Juma — Shanba</span><strong>10:00 — 00:00</strong></li>
+                    <li><span>Yakshanba</span><strong>11:00 — 23:00</strong></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="map-frame">
+              <iframe title="Chinor xaritada" src="https://www.openstreetmap.org/export/embed.html?bbox=69.27%2C41.30%2C69.30%2C41.32&amp;layer=mapnik" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 14. Ko'p beriladigan savollar -->
+      <section class="faq-section section-pad" id="faq">
+        <div class="faq-content page-width">
+          <div class="section-heading section-heading-center">
+            <h2>Tez-tez beriladigan <em>savollar</em></h2>
+          </div>
+          <div class="faq-list">
+            <details open>
+              <summary>Stol band qilish kerakmi?</summary>
+              <p>Hafta oxirlari va bayram kunlari uchun oldindan band qilish tavsiya etiladi. Oddiy kunlari ham telefon orqali oson band qilish mumkin.</p>
+            </details>
+            <details>
+              <summary>Yetkazib berish xizmati bormi?</summary>
+              <p>Ha, Toshkent bo'ylab yetkazib beramiz. Buyurtma 60 daqiqa ichida, issiqligicha yetkaziladi.</p>
+            </details>
+            <details>
+              <summary>To'y va marosimlarga zal beriladimi?</summary>
+              <p>Albatta. 120 kishilik katta zalimiz mavjud. Maxsus menyu va milliy bezaklar bilan.</p>
+            </details>
+            <details>
+              <summary>Vegetarian taomlari bormi?</summary>
+              <p>Ha, bizda dimlama, mosh kichiri, mevali salatlar va boshqa go'shtsiz taomlar mavjud.</p>
+            </details>
+            <details>
+              <summary>Bolalar uchun joy bormi?</summary>
+              <p>Bolalar uchun alohida menyu va o'yin maydonchasi bor.</p>
+            </details>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- 15. Ijtimoiy tarmoqlar, tezkor havolalar va mualliflik qismi -->
+    <footer class="site-footer">
+      <div class="footer-main page-width">
+        <div class="footer-brand">
+            <a class="brand brand-light" href="#home"><span class="brand-name">Chinor</span></a>
+            <p>Samarqand yuragida, qadimiy chinor daraxti soyasida joylashgan oilaviy choyxona. An'anaviy o'zbek taomlari, samimiy mehmondo'stlik va asl o'zbek mehri.</p>
+            <div class="social-links" aria-label="Ijtimoiy tarmoqlar">
+              <a href="https://instagram.com/22.abdurasulov" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle class="social-dot" cx="17.5" cy="6.5" r="0.7"></circle></svg>
+              </a>
+              <a href="https://t.me/Sanjarovic_22" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 2 11 13"></path><path d="m22 2-7 20-4-9-9-4 20-7Z"></path></svg>
+              </a>
+              <a href="https://facebook.com/chinor.uz" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 8h4V4h-4a5 5 0 0 0-5 5v3H6v4h3v5h4v-5h4l1-4h-5V9a1 1 0 0 1 1-1Z"></path></svg>
+              </a>
+              <a href="https://youtube.com/@chinor" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+                <svg class="social-youtube" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="5"></rect><path d="m10 8 6 4-6 4Z"></path></svg>
+              </a>
+            </div>
+        </div>
+        <div class="footer-column">
+            <h2>Sahifa</h2>
+          <a href="#about">Biz haqimizda</a>
+          <a href="#menu">Taomnoma</a>
+            <a href="#gallery">Galereya</a>
+          <a href="#events">Tadbirlar</a>
+            <a href="#location">Manzil</a>
+            <a href="#reservation">Stol band qilish</a>
+        </div>
+        <div class="footer-column">
+            <h2>Aloqa</h2>
+            <span>Amir Temur shoh ko'chasi, 42-uy, Toshkent</span>
+          <a href="tel:+998712004242">+998 71 200 42 42</a>
+          <a href="mailto:info@chinor.uz">info@chinor.uz</a>
+          </div>
+          <div class="footer-column">
+            <h2>Ish vaqti</h2>
+            <div><strong>Dushanba — Payshanba</strong><span>10:00 — 23:00</span></div>
+            <div><strong>Juma — Shanba</strong><span>10:00 — 00:00</span></div>
+            <div><strong>Yakshanba</strong><span>11:00 — 23:00</span></div>
+        </div>
+      </div>
+      <div class="footer-bottom page-width">
+        <p>© <span id="current-year"></span> Chinor choyxonasi. Barcha huquqlar himoyalangan.</p>
+          <p>Samarqan, O'zbekiston · Mehr bilan tayyorlandi</p>
+      </div>
+    </footer>
+  </body>
+</html>

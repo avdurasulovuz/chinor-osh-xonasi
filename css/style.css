@@ -1,0 +1,1972 @@
+/* 1. Ranglar, shriftlar va umumiy o'lchamlar */
+:root {
+  color-scheme: light;
+  --color-cream: #f6f2e9;
+  --color-paper: #f8f6f1;
+  --color-green: #1d3a3a;
+  --color-green-light: #285252;
+  --color-red: #db242a;
+  --color-orange: #f3813f;
+  --color-ink: #1d3a3a;
+  --color-muted: #707a77;
+  --color-line: #e5dfd2;
+  --font-body: "Inter", Arial, sans-serif;
+  --font-heading: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  --page-width: 1280px;
+}
+
+/* 2. Boshlang'ich sozlamalar — turli brauzerlarda bir xil ko'rinish */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 78px;
+}
+
+body {
+  margin: 0;
+  color: var(--color-ink);
+  background: var(--color-paper);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button,
+a,
+input,
+select,
+textarea {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+summary:focus-visible {
+  outline: 3px solid var(--color-orange);
+  outline-offset: 3px;
+}
+
+.page-width {
+  width: min(var(--page-width), calc(100% - 48px));
+  margin-inline: auto;
+}
+
+.section-pad {
+  padding-block: 128px;
+}
+
+h1,
+h2,
+h3,
+p,
+figure,
+blockquote {
+  margin-top: 0;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-heading);
+  font-weight: 400;
+  line-height: 1;
+}
+
+h2 {
+  margin-bottom: 16px;
+  color: var(--color-green);
+  font-size: 2.25rem;
+  letter-spacing: normal;
+}
+
+@media (min-width: 768px) {
+  h2 {
+    font-size: 3rem;
+  }
+}
+
+h2 em,
+.hero h1 em {
+  color: var(--color-red);
+  font-weight: 500;
+}
+
+.eyebrow {
+  margin-bottom: 16px;
+  color: var(--color-red);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.section-heading {
+  margin-bottom: 46px;
+}
+
+.section-heading-center {
+  max-width: 1232px;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.section-heading-center h2 {
+  margin-bottom: 16px;
+}
+
+.section-intro {
+  max-width: 520px;
+  margin: 0 auto;
+  color: var(--color-muted);
+}
+
+/* 3. Tugma ko'rinishi */
+.button {
+  display: inline-flex;
+  min-height: 56px;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 32px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: center;
+  transition: background-color 180ms ease, color 180ms ease, transform 180ms ease;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+}
+
+.button-primary {
+  border-color: rgb(219 36 42 / 30%);
+  color: #fff;
+  background: var(--color-red);
+}
+
+.button-primary:hover {
+  background: #c81f26;
+}
+
+.button-outline {
+  border-color: rgb(255 255 255 / 35%);
+  color: #fff;
+  background: rgb(255 255 255 / 10%);
+  backdrop-filter: blur(6px);
+}
+
+.button-outline:hover {
+  color: #fff;
+  background: rgb(255 255 255 / 20%);
+}
+
+.text-link {
+  display: inline-flex;
+  gap: 10px;
+  align-items: center;
+  color: var(--color-red);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.text-link span,
+.event-card a span,
+.footer-social a span {
+  transition: transform 180ms ease;
+}
+
+.text-link:hover span,
+.event-card a:hover span,
+.footer-social a:hover span {
+  transform: translate(3px, -3px);
+}
+
+/* 4. Sayt tepasidagi navigatsiya */
+.site-header {
+  position: fixed;
+  z-index: 50;
+  top: 0;
+  right: 0;
+  left: 0;
+  color: #fff;
+  background: linear-gradient(180deg, rgb(0 0 0 / 42%), transparent);
+  transition: background-color 200ms ease, box-shadow 200ms ease;
+}
+
+.site-header.is-scrolled {
+  color: var(--color-green);
+  background: var(--color-paper);
+  box-shadow: 0 1px 8px rgb(29 58 58 / 8%);
+}
+
+.header-inner {
+  display: flex;
+  min-height: 78px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 26px;
+}
+
+.header-inner.page-width {
+  width: 100%;
+  max-width: 1280px;
+  padding-inline: 24px;
+}
+
+@media (min-width: 768px) {
+  .header-inner.page-width {
+    padding-inline: 48px;
+  }
+}
+
+@media (min-width: 1536px) {
+  .header-inner.page-width {
+    max-width: 1536px;
+  }
+}
+
+.brand {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 11px;
+  color: #fff;
+}
+
+.brand-mark {
+  display: none;
+}
+
+.brand-name {
+  display: grid;
+  color: inherit;
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.15;
+}
+
+@media (min-width: 768px) {
+  .brand-name {
+    font-size: 1.875rem;
+  }
+}
+
+.brand-name small {
+  display: none;
+}
+
+.site-header.is-scrolled .brand {
+  color: var(--color-red);
+}
+
+.main-navigation {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.main-navigation a {
+  color: rgb(255 255 255 / 92%);
+  font-size: 0.88rem;
+  font-weight: 500;
+  transition: color 160ms ease;
+}
+
+.main-navigation a:hover {
+  color: #fff;
+}
+
+.site-header.is-scrolled .main-navigation a {
+  color: var(--color-green);
+}
+
+.site-header.is-scrolled .main-navigation a:hover {
+  color: var(--color-red);
+}
+
+.main-navigation .nav-booking {
+  padding: 8px 24px;
+  border: 1px solid rgb(255 255 255 / 85%);
+  border-radius: 999px;
+  color: #fff;
+  background: var(--color-red);
+}
+
+.main-navigation .nav-booking:hover {
+  color: #fff;
+  background: #c81f26;
+}
+
+.site-header.is-scrolled .main-navigation .nav-booking {
+  color: #fff;
+}
+
+.menu-toggle {
+  display: none;
+  width: 44px;
+  height: 44px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 6px;
+  border: 1px solid rgb(255 255 255 / 35%);
+  border-radius: 50%;
+  background: rgb(0 0 0 / 15%);
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  width: 18px;
+  height: 2px;
+  background: #fff;
+  transition: transform 180ms ease;
+}
+
+.site-header.is-scrolled .menu-toggle {
+  border-color: var(--color-line);
+  background: transparent;
+}
+
+.site-header.is-scrolled .menu-toggle span {
+  background: var(--color-green);
+}
+
+.menu-toggle.is-open span:first-child {
+  transform: translateY(4px) rotate(45deg);
+}
+
+.menu-toggle.is-open span:last-child {
+  transform: translateY(-4px) rotate(-45deg);
+}
+
+/* 5. Katta bosh sahifa va tanishtiruv matni */
+.hero {
+  position: relative;
+  display: flex;
+  min-height: 100svh;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  color: #fffdf7;
+  background: var(--color-green);
+}
+
+.hero-image,
+.hero-shade {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-image {
+  object-fit: cover;
+  object-position: center;
+}
+
+.hero-shade {
+  background: rgb(0 0 0 / 40%);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  width: min(768px, calc(100% - 32px));
+  flex-direction: column;
+  align-items: center;
+  padding-block: 150px 125px;
+  padding-inline: 0;
+  text-align: center;
+}
+
+.hero-eyebrow {
+  margin-bottom: 24px;
+  padding: 4px 12px;
+  border: 1px solid rgb(255 255 255 / 35%);
+  border-radius: 999px;
+  color: rgb(255 255 255 / 92%);
+  background: rgb(255 255 255 / 5%);
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  backdrop-filter: blur(4px);
+}
+
+.hero h1 {
+  max-width: 850px;
+  margin-bottom: 24px;
+  color: #fff;
+  font-size: 3rem;
+  font-weight: 400;
+  letter-spacing: normal;
+  line-height: 1.25;
+}
+
+.hero h1 em {
+  color: rgb(255 255 255 / 90%);
+  font-weight: 400;
+}
+
+.hero-description {
+  max-width: 576px;
+  margin-bottom: 40px;
+  color: rgb(255 255 255 / 82%);
+  font-size: 1.125rem;
+  font-weight: 300;
+  line-height: 1.65;
+}
+
+@media (min-width: 768px) {
+  .hero h1 {
+    font-size: 4.5rem;
+  }
+
+  .hero-description {
+    font-size: 1.25rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero h1 {
+    font-size: 6rem;
+  }
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.hero-note {
+  margin: 30px 0 0;
+  color: rgb(255 253 247 / 69%);
+  font-size: 0.77rem;
+  letter-spacing: 0.035em;
+}
+
+.hero-scroll {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 8px;
+  color: rgb(255 255 255 / 65%);
+  transform: translateX(-50%);
+}
+
+.hero-scroll-label {
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.hero-scroll-line {
+  position: relative;
+  width: 1px;
+  height: 48px;
+  overflow: hidden;
+  background: rgb(255 255 255 / 40%);
+}
+
+.hero-scroll-line::after {
+  position: absolute;
+  inset: 0;
+  background: #fff;
+  content: "";
+  animation: scroll-cue 1.8s ease-in-out infinite;
+}
+
+@keyframes scroll-cue {
+  0% {
+    transform: translateY(-100%);
+  }
+
+  50%,
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+/* 6. Restoran hikoyasi, uch suratli kollaj va raqamlar */
+.story {
+  background: var(--color-paper);
+}
+
+.story-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 80px;
+}
+
+.story-copy > p {
+  max-width: 550px;
+  margin-bottom: 22px;
+  color: var(--color-muted);
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+.story-copy h2 {
+  max-width: 576px;
+  margin-bottom: 32px;
+  line-height: 1.25;
+}
+
+.story-divider {
+  display: block;
+  width: 48px;
+  height: 3px;
+  margin: 0 0 32px;
+  background: var(--color-orange);
+}
+
+.story-collage {
+  display: grid;
+  min-width: 0;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.story-photo {
+  min-width: 0;
+  overflow: hidden;
+  border-radius: 16px;
+  background: var(--color-cream);
+  box-shadow: 0 12px 24px rgb(29 58 58 / 10%);
+}
+
+.story-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.story-photo-tall {
+  aspect-ratio: 3 / 4;
+}
+
+.story-photo-stack {
+  display: grid;
+  min-width: 0;
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  margin-top: 34px;
+}
+
+.stat {
+  display: grid;
+  align-content: start;
+  gap: 0;
+}
+
+.stat strong {
+  color: var(--color-red);
+  font-family: var(--font-heading);
+  font-size: clamp(1.25rem, 2vw, 1.75rem);
+  line-height: 1.2;
+}
+
+.stat span {
+  color: var(--color-muted);
+  font-size: 0.58rem;
+  letter-spacing: 0.06em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+/* 7. Qadriyatlar va choyxonaning afzalliklari */
+.features.section-pad {
+  padding-block: 112px;
+  background: var(--color-cream);
+}
+
+.features .section-heading {
+  margin-bottom: 48px;
+}
+
+.features .eyebrow {
+  color: var(--color-red);
+}
+
+.features h2 {
+  margin-top: 14px;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.feature {
+  min-height: 204px;
+  padding: 26px 25px;
+  border: 1px solid rgb(221 216 206 / 70%);
+  border-radius: 16px;
+  background: var(--color-paper);
+  transition: box-shadow 180ms ease, transform 180ms ease;
+}
+
+.feature:hover {
+  box-shadow: 0 12px 28px rgb(29 58 58 / 8%);
+  transform: translateY(-2px);
+}
+
+.feature-icon {
+  display: grid;
+  width: 48px;
+  height: 48px;
+  place-items: center;
+  margin-bottom: 17px;
+  border-radius: 12px;
+  color: var(--color-red);
+  background: rgb(219 36 42 / 9%);
+}
+
+.feature-icon svg {
+  width: 23px;
+  height: 23px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
+}
+
+.feature h3 {
+  margin: 0 0 8px;
+  color: var(--color-green);
+  font-size: 1.08rem;
+}
+
+.feature p {
+  margin-bottom: 0;
+  color: var(--color-muted);
+  font-size: 0.8rem;
+  line-height: 1.65;
+}
+
+/* 8. Menyu toifalari va taom kartalari */
+.menu-section {
+  background: var(--color-cream);
+}
+
+.menu-section .section-heading {
+  margin-bottom: 35px;
+}
+
+.menu-tabs {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-bottom: 22px;
+}
+
+.menu-tab {
+  min-height: 42px;
+  padding: 9px 16px;
+  border: 1px solid var(--color-line);
+  border-radius: 99px;
+  color: var(--color-green);
+  background: transparent;
+  cursor: pointer;
+  font-size: 0.83rem;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: color 160ms ease, background-color 160ms ease, border-color 160ms ease;
+}
+
+.menu-tab:hover,
+.menu-tab.is-active {
+  border-color: var(--color-red);
+  color: #fff;
+  background: var(--color-red);
+  box-shadow: 0 5px 14px rgb(219 36 42 / 20%);
+}
+
+.menu-tagline {
+  min-height: 24px;
+  margin: 0 0 25px;
+  color: rgb(219 36 42 / 82%);
+  font-size: 0.77rem;
+  letter-spacing: 0.2em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.dish-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.dish-card {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid rgb(29 58 58 / 10%);
+  border-radius: 16px;
+  background: var(--color-paper);
+  box-shadow: 0 1px 3px rgb(0 0 0 / 7%);
+  transition: box-shadow 200ms ease, transform 200ms ease;
+}
+
+.dish-card:hover {
+  box-shadow: 0 12px 30px rgb(29 58 58 / 14%);
+  transform: translateY(-2px);
+}
+
+.dish-image-wrap {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  background: #e9e3d5;
+}
+
+.dish-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 350ms ease;
+}
+
+.dish-card:hover .dish-image {
+  transform: scale(1.035);
+}
+
+.dish-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  border-radius: 999px;
+  padding: 5px 10px;
+  color: #fffdf7;
+  background: var(--color-red);
+  font-size: 0.68rem;
+  font-weight: 700;
+}
+
+.dish-copy {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.dish-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 7px;
+}
+
+.dish-heading h3 {
+  margin: 0;
+  color: var(--color-green);
+  font-size: 1.17rem;
+}
+
+.dish-price {
+  flex: 0 0 auto;
+  color: var(--color-red);
+  font-size: 0.83rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.dish-copy p {
+  margin-bottom: 0;
+  color: var(--color-muted);
+  font-size: 0.82rem;
+  line-height: 1.55;
+}
+
+.menu-footnote {
+  margin: 25px 0 0;
+  color: var(--color-muted);
+  font-size: 0.74rem;
+  text-align: center;
+}
+
+/* 9. Suratlar galereyasi */
+.gallery-section {
+  background: var(--color-paper);
+}
+
+.gallery-heading {
+  margin-bottom: 52px;
+}
+
+.gallery-heading p:last-child {
+  max-width: 520px;
+  margin: 0 auto;
+  color: var(--color-muted);
+  font-size: 0.86rem;
+}
+
+.section-divider {
+  display: block;
+  width: 48px;
+  height: 3px;
+  margin: 22px auto 0;
+  background: var(--color-orange);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.gallery-item {
+  position: relative;
+  aspect-ratio: 1;
+  min-width: 0;
+  margin: 0;
+  overflow: hidden;
+  border-radius: 16px;
+  background: #ded9cb;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 700ms ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.1);
+}
+
+.gallery-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgb(0 0 0 / 40%), transparent 60%);
+  opacity: 0;
+  transition: opacity 300ms ease;
+}
+
+.gallery-item:hover .gallery-overlay {
+  opacity: 1;
+}
+
+/* 10. Tadbirlar va maxsus kunlar */
+.events-section.section-pad {
+  padding-block: 112px;
+  background: var(--color-paper);
+}
+
+.event-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+  align-items: start;
+  gap: clamp(38px, 6vw, 80px);
+}
+
+.event-intro {
+  position: sticky;
+  top: 110px;
+}
+
+.event-intro .eyebrow {
+  margin-bottom: 14px;
+}
+
+.event-intro h2 {
+  margin-bottom: 18px;
+  line-height: 1.18;
+}
+
+.event-intro > p:last-child {
+  margin: 0;
+  color: var(--color-muted);
+  font-size: 0.88rem;
+  line-height: 1.7;
+}
+
+.event-list {
+  display: grid;
+  gap: 14px;
+}
+
+.event-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 22px;
+  padding: 20px 24px;
+  border: 1px solid rgb(221 216 206 / 65%);
+  border-radius: 16px;
+  background: var(--color-cream);
+  transition: border-color 180ms ease;
+}
+
+.event-card:hover {
+  border-color: rgb(219 36 42 / 40%);
+}
+
+.event-icon {
+  display: grid;
+  width: 56px;
+  height: 56px;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 12px;
+  color: var(--color-red);
+  background: rgb(219 36 42 / 9%);
+}
+
+.event-icon svg {
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
+}
+
+.event-card h3 {
+  margin: 0 0 2px;
+  color: var(--color-green);
+  font-size: 1.2rem;
+}
+
+.event-card .event-date {
+  margin: 0 0 7px;
+  color: var(--color-orange);
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.event-card p {
+  margin: 0;
+  color: var(--color-muted);
+  font-size: 0.78rem;
+  line-height: 1.55;
+}
+
+/* 11. Mehmonlarning fikrlari */
+.testimonials-section.section-pad {
+  padding-block: 96px;
+  background: #ece7df;
+}
+
+.testimonials-section .section-heading {
+  margin-bottom: 48px;
+}
+
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.quote-card {
+  margin: 0;
+  padding: 27px 30px;
+  border: 1px solid rgb(221 216 206 / 75%);
+  border-radius: 16px;
+  background: var(--color-paper);
+  box-shadow: 0 2px 4px rgb(29 58 58 / 4%);
+}
+
+.review-stars {
+  margin-bottom: 15px;
+  color: var(--color-orange);
+  font-size: 1.05rem;
+  letter-spacing: 0.08em;
+  line-height: 1;
+}
+
+.quote-card > p {
+  min-height: 104px;
+  margin: 0 0 18px;
+  color: var(--color-muted);
+  font-size: 0.88rem;
+  font-style: italic;
+  line-height: 1.45;
+}
+
+.quote-card footer {
+  display: grid;
+  gap: 1px;
+}
+
+.quote-card footer strong {
+  color: var(--color-green);
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+}
+
+.quote-card footer span {
+  color: var(--color-muted);
+  font-size: 0.76rem;
+}
+
+/* 12. To'q yashil fondagi markaziy stol band qilish formasi */
+.reservation-section.section-pad {
+  padding-block: 96px;
+  color: var(--color-paper);
+  background: var(--color-green);
+}
+
+@media (min-width: 768px) {
+  .reservation-section.section-pad {
+    padding-block: 128px;
+  }
+}
+
+.reservation-panel {
+  max-width: 900px;
+  padding: clamp(30px, 5vw, 50px);
+  border: 1px solid rgb(248 246 241 / 10%);
+  border-radius: 24px;
+  background: rgb(248 246 241 / 5%);
+  backdrop-filter: blur(5px);
+}
+
+.reservation-heading {
+  margin-bottom: 34px;
+  text-align: center;
+}
+
+.reservation-heading h2 {
+  margin-bottom: 8px;
+  color: var(--color-paper);
+}
+
+.reservation-heading h2 em {
+  color: var(--color-orange);
+}
+
+.reservation-heading p {
+  margin: 0;
+  color: rgb(248 246 241 / 72%);
+  font-size: 0.82rem;
+}
+
+.reservation-form {
+  display: grid;
+  gap: 20px;
+  color: var(--color-paper);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.reservation-details-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.date-time-fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.reservation-form label {
+  display: grid;
+  min-width: 0;
+  gap: 6px;
+}
+
+.reservation-form label > span {
+  color: rgb(248 246 241 / 82%);
+  font-size: 0.68rem;
+  font-weight: 500;
+}
+
+.reservation-form label small {
+  color: rgb(248 246 241 / 68%);
+  font-weight: 400;
+}
+
+.reservation-form input,
+.reservation-form select,
+.reservation-form textarea {
+  width: 100%;
+  min-height: 40px;
+  padding: 9px 12px;
+  border: 1px solid rgb(248 246 241 / 18%);
+  border-radius: 6px;
+  color: var(--color-paper);
+  background: rgb(248 246 241 / 10%);
+  font-size: 0.8rem;
+}
+
+.reservation-form input:focus,
+.reservation-form select:focus,
+.reservation-form textarea:focus {
+  border-color: var(--color-orange);
+  outline: 1px solid var(--color-orange);
+}
+
+.reservation-form textarea {
+  min-height: 72px;
+  resize: none;
+}
+
+.reservation-form input::placeholder,
+.reservation-form textarea::placeholder {
+  color: rgb(248 246 241 / 35%);
+}
+
+.button-secondary {
+  border-color: rgb(248 246 241 / 75%);
+  color: #fff;
+  background: var(--color-orange);
+}
+
+.button-secondary:hover {
+  background: #df6d2e;
+}
+
+.form-submit {
+  justify-self: center;
+  min-width: 190px;
+  margin-top: 2px;
+}
+
+.form-note {
+  max-width: 600px;
+  margin: -7px auto 0;
+  color: rgb(248 246 241 / 60%);
+  font-size: 0.65rem;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.form-note.is-success {
+  color: #bde6c2;
+  font-weight: 600;
+}
+
+/* 13. Manzil, aloqa ma'lumotlari va xarita */
+.location-section.section-pad {
+  padding-block: 112px;
+  background: var(--color-cream);
+}
+
+.location-heading {
+  margin-bottom: 44px;
+}
+
+.location-heading h2 {
+  margin-bottom: 8px;
+}
+
+.location-heading p {
+  margin: 0;
+  color: var(--color-muted);
+  font-size: 0.84rem;
+}
+
+.location-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+  align-items: stretch;
+  gap: 28px;
+}
+
+.contact-card {
+  display: grid;
+  align-content: start;
+  gap: 22px;
+  padding: 28px;
+  border: 1px solid rgb(221 216 206 / 65%);
+  border-radius: 16px;
+  background: var(--color-paper);
+  box-shadow: 0 2px 5px rgb(29 58 58 / 4%);
+}
+
+.contact-item {
+  display: flex;
+  min-width: 0;
+  gap: 14px;
+}
+
+.contact-icon {
+  display: grid;
+  width: 40px;
+  height: 40px;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 12px;
+  color: var(--color-red);
+  background: rgb(219 36 42 / 9%);
+}
+
+.contact-icon svg {
+  width: 19px;
+  height: 19px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
+}
+
+.contact-label {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--color-muted);
+  font-size: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.contact-item p,
+.contact-item a {
+  display: block;
+  margin: 0;
+  color: var(--color-green);
+  font-size: 0.76rem;
+  line-height: 1.55;
+}
+
+.contact-item a:hover {
+  color: var(--color-red);
+}
+
+.contact-item .contact-subtext {
+  color: var(--color-muted);
+  font-size: 0.7rem;
+}
+
+.contact-hours-content {
+  flex: 1;
+}
+
+.hours-list {
+  display: grid;
+  gap: 5px;
+  margin: 9px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.hours-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 0.66rem;
+  line-height: 1.4;
+}
+
+.hours-list li span {
+  color: var(--color-muted);
+}
+
+.hours-list li strong {
+  flex: 0 0 auto;
+  color: var(--color-green);
+  font-weight: 500;
+}
+
+.map-frame {
+  min-height: 420px;
+  overflow: hidden;
+  border: 1px solid rgb(221 216 206 / 65%);
+  border-radius: 16px;
+  background: var(--color-paper);
+  box-shadow: 0 2px 5px rgb(29 58 58 / 4%);
+}
+
+.map-frame iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 420px;
+  border: 0;
+}
+
+/* 14. Savol-javoblar */
+.faq-section.section-pad {
+  padding-block: 112px;
+  background: var(--color-paper);
+}
+
+.faq-content {
+  max-width: 768px;
+}
+
+.faq-content .section-heading {
+  margin-bottom: 34px;
+}
+
+.faq-list {
+  display: grid;
+  gap: 10px;
+}
+
+.faq-list details {
+  overflow: hidden;
+  border: 1px solid rgb(221 216 206 / 65%);
+  border-radius: 16px;
+  background: var(--color-cream);
+}
+
+.faq-list summary {
+  position: relative;
+  padding: 17px 52px 17px 22px;
+  color: var(--color-green);
+  cursor: pointer;
+  font-size: 0.92rem;
+  font-weight: 500;
+  list-style: none;
+}
+
+.faq-list summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-list summary::after {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  color: var(--color-red);
+  content: "+";
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 1;
+  transform: translateY(-50%);
+  transition: transform 180ms ease;
+}
+
+.faq-list details[open] summary::after {
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.faq-list details p {
+  max-width: 620px;
+  margin: -2px 52px 17px 22px;
+  color: var(--color-muted);
+  font-size: 0.78rem;
+  line-height: 1.6;
+}
+
+/* 15. Pastki qism, aloqa va ijtimoiy tarmoqlar */
+.site-footer {
+  color: var(--color-paper);
+  background: var(--color-green);
+}
+
+.footer-main {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr 1.1fr 0.9fr;
+  gap: 34px;
+  padding-block: 62px 48px;
+}
+
+.brand-light {
+  color: var(--color-red);
+}
+
+.footer-brand > p {
+  max-width: 280px;
+  margin: 14px 0 20px;
+  color: rgb(248 246 241 / 68%);
+  font-size: 0.78rem;
+  line-height: 1.65;
+}
+
+.social-links {
+  display: flex;
+  gap: 10px;
+}
+
+.social-links a {
+  display: grid;
+  width: 38px;
+  height: 38px;
+  place-items: center;
+  border-radius: 50%;
+  color: var(--color-paper);
+  background: rgb(248 246 241 / 10%);
+  font-size: 0.72rem;
+  font-weight: 700;
+  transition: background-color 180ms ease;
+}
+
+.social-links a:hover {
+  background: var(--color-red);
+}
+
+.social-links svg {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.7;
+}
+
+.social-links .social-dot,
+.social-links .social-youtube path:last-child {
+  fill: currentColor;
+  stroke: none;
+}
+
+.footer-column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 11px;
+}
+
+.footer-column h2 {
+  margin: 0 0 7px;
+  color: rgb(248 246 241 / 62%);
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.footer-column a,
+.footer-column > span,
+.footer-column div span {
+  color: rgb(248 246 241 / 75%);
+  font-size: 0.74rem;
+  line-height: 1.5;
+}
+
+.footer-column a:hover {
+  color: var(--color-red);
+}
+
+.footer-column > div {
+  display: grid;
+  gap: 2px;
+}
+
+.footer-column div strong {
+  color: var(--color-paper);
+  font-size: 0.74rem;
+  font-weight: 500;
+}
+
+.footer-bottom {
+  display: flex;
+  min-height: 62px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  border-top: 1px solid rgb(248 246 241 / 14%);
+}
+
+.footer-bottom p {
+  margin: 0;
+  color: rgb(248 246 241 / 54%);
+  font-size: 0.68rem;
+}
+
+/* 16. Planshet ekranlariga moslash */
+@media (max-width: 1023px) {
+  .section-pad {
+    padding-block: 128px;
+  }
+
+  .story-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .main-navigation {
+    gap: 15px;
+  }
+
+  .main-navigation a {
+    font-size: 0.76rem;
+  }
+
+  .story-grid {
+    gap: 42px;
+  }
+
+  .story-collage {
+    order: 1;
+    max-width: 520px;
+    margin-inline: auto;
+  }
+
+  .story-copy {
+    order: 2;
+  }
+
+  .location-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .event-grid {
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+
+  .event-intro {
+    position: static;
+    max-width: 580px;
+  }
+
+  .feature-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .feature {
+    min-height: 0;
+  }
+
+  .dish-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .footer-main {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* 17. Planshet va kichik ekranlar uchun bir xil vertikal bo'shliqlar */
+@media (max-width: 767px) {
+  .section-pad,
+  .features.section-pad,
+  .events-section.section-pad,
+  .location-section.section-pad,
+  .faq-section.section-pad {
+    padding-block: 80px;
+  }
+
+  .reservation-section.section-pad {
+    padding-block: 96px;
+  }
+}
+
+/* Planshet va telefonlarda ixcham navigatsiya menyusi */
+@media (max-width: 767px) {
+  .menu-toggle {
+    display: flex;
+  }
+
+  .main-navigation {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    display: none;
+    align-items: stretch;
+    flex-direction: column;
+    gap: 0;
+    padding: 8px 18px 18px;
+    border-bottom: 1px solid rgb(255 255 255 / 14%);
+    background: rgb(29 58 58 / 98%);
+    box-shadow: 0 14px 20px rgb(0 0 0 / 15%);
+  }
+
+  .main-navigation.is-open {
+    display: flex;
+  }
+
+  .main-navigation a {
+    padding: 12px 4px;
+    border-bottom: 1px solid rgb(255 255 255 / 14%);
+    color: #fff;
+    font-size: 0.9rem;
+  }
+
+  .main-navigation .nav-booking {
+    margin-top: 12px;
+    padding: 11px 14px;
+    border: 1px solid rgb(255 255 255 / 75%);
+    text-align: center;
+  }
+
+  .site-header.is-scrolled .main-navigation {
+    border-bottom-color: var(--color-line);
+    background: var(--color-paper);
+  }
+
+  .site-header.is-scrolled .main-navigation a {
+    border-bottom-color: var(--color-line);
+  }
+
+  .site-header.is-scrolled .main-navigation .nav-booking {
+    border-color: var(--color-red);
+    color: #fff;
+  }
+
+  .form-row,
+  .reservation-details-row {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* 17. Telefon ekranlari va mobil menyu */
+@media (max-width: 640px) {
+  html {
+    scroll-padding-top: 68px;
+  }
+
+  .page-width {
+    width: calc(100% - 32px);
+  }
+
+  .section-pad {
+    padding-block: 80px;
+  }
+
+  .reservation-section.section-pad {
+    padding-block: 96px;
+  }
+
+  .header-inner {
+    min-height: 68px;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .main-navigation {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    display: none;
+    align-items: stretch;
+    flex-direction: column;
+    gap: 0;
+    padding: 8px 18px 18px;
+    border-bottom: 1px solid rgb(255 255 255 / 14%);
+    background: rgb(29 58 58 / 98%);
+    box-shadow: 0 14px 20px rgb(0 0 0 / 15%);
+  }
+
+  .main-navigation.is-open {
+    display: flex;
+  }
+
+  .main-navigation a {
+    padding: 12px 4px;
+    border-bottom: 1px solid rgb(255 255 255 / 14%);
+    color: #fff;
+    font-size: 0.9rem;
+  }
+
+  .main-navigation .nav-booking {
+    margin-top: 12px;
+    padding: 11px 14px;
+    border: 1px solid rgb(255 255 255 / 75%);
+    text-align: center;
+  }
+
+  .hero {
+    min-height: 100svh;
+  }
+
+  .hero-image {
+    object-position: center;
+  }
+
+  .hero-shade {
+    background: rgb(0 0 0 / 44%);
+  }
+
+  .hero-content {
+    width: calc(100% - 36px);
+    padding-block: 135px 125px;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.6rem, 11vw, 4.7rem);
+  }
+
+  .hero-description {
+    max-width: 420px;
+    font-size: 1.125rem;
+  }
+
+  .hero-actions {
+    align-items: stretch;
+    flex-direction: column;
+    max-width: 290px;
+  }
+
+  .hero-note {
+    max-width: 300px;
+    font-size: 0.69rem;
+  }
+
+  .story-grid {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .story-collage {
+    order: 1;
+    max-width: 520px;
+    margin-inline: auto;
+  }
+
+  .story-copy {
+    order: 2;
+  }
+
+  .stats-row {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px 14px;
+    margin-top: 28px;
+  }
+
+  .stat strong {
+    font-size: 1.7rem;
+  }
+
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .feature {
+    min-height: 0;
+    padding: 22px;
+  }
+
+  .menu-tabs {
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    margin-right: -18px;
+    margin-left: -18px;
+    padding: 0 18px 8px;
+    scrollbar-width: thin;
+  }
+
+  .dish-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .dish-card {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .dish-image {
+    height: 100%;
+    min-height: 0;
+  }
+
+  .dish-copy {
+    padding: 17px 18px 19px;
+  }
+
+  .dish-heading {
+    align-items: baseline;
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  .dish-heading h3 {
+    font-size: 1rem;
+  }
+
+  .dish-copy p {
+    font-size: 0.76rem;
+  }
+
+  .dish-badge {
+    top: 7px;
+    left: 7px;
+    padding: 4px 7px;
+    font-size: 0.6rem;
+  }
+
+  .gallery-heading {
+    display: block;
+  }
+
+  .gallery-heading p:last-child {
+    margin: 0 auto;
+  }
+
+  .gallery-heading {
+    margin-bottom: 38px;
+  }
+
+  .section-divider {
+    margin-top: 18px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .event-grid,
+  .testimonial-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .event-card {
+    gap: 15px;
+    padding: 18px;
+  }
+
+  .event-icon {
+    width: 48px;
+    height: 48px;
+  }
+
+  .quote-card > p {
+    min-height: 0;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 17px;
+  }
+
+  .reservation-details-row {
+    grid-template-columns: 1fr;
+    gap: 17px;
+  }
+
+  .reservation-form {
+    gap: 17px;
+  }
+
+  .reservation-panel {
+    padding: 24px 18px;
+  }
+
+  .reservation-heading {
+    margin-bottom: 27px;
+  }
+
+  .reservation-heading p {
+    max-width: 420px;
+    margin-inline: auto;
+  }
+
+  .map-frame,
+  .map-frame iframe {
+    min-height: 310px;
+  }
+
+  .footer-main {
+    grid-template-columns: 1fr 1fr;
+    gap: 34px 18px;
+    padding-block: 45px 35px;
+  }
+
+  .footer-brand {
+    grid-column: 1 / -1;
+  }
+
+  .footer-column h2 {
+    font-size: 0.68rem;
+  }
+
+  .footer-column a,
+  .footer-column > span {
+    font-size: 0.75rem;
+  }
+
+  .footer-bottom {
+    min-height: 70px;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4px;
+    padding-block: 13px;
+  }
+}
+
+/* 18. Juda kichik telefonlarda ham matn va rasmlar sig'ishi */
+@media (max-width: 380px) {
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .dish-card {
+    grid-template-columns: 105px minmax(0, 1fr);
+  }
+
+  .dish-copy {
+    padding: 11px;
+  }
+
+  .dish-price {
+    font-size: 0.76rem;
+  }
+}
+
+/* 19. Animatsiyani kamaytirishni tanlaganlar uchun qulaylik */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
